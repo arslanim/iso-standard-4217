@@ -21,6 +21,21 @@ class Currency
         $this->numericCode = $numericCode;
     }
 
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getAlpha3(): string
+    {
+        return $this->alpha3;
+    }
+
+    public function getNumericCode(): string
+    {
+        return $this->numericCode;
+    }
+
     private function validateAttributes(string $name, string $alpha3, string $numericCode): void
     {
         if (empty($name)) {
