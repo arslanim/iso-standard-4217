@@ -2,6 +2,10 @@
 
 namespace arslanimamutdinov\ISOStandard4217\tests\unit;
 
+use arslanimamutdinov\ISOStandard4217\Currency;
+use arslanimamutdinov\ISOStandard4217\exceptions\CurrencyStandardAlpha3EmptyException;
+use arslanimamutdinov\ISOStandard4217\exceptions\CurrencyStandardNameEmptyException;
+use arslanimamutdinov\ISOStandard4217\exceptions\CurrencyStandardNumericCodeEmptyException;
 use PHPUnit\Framework\TestCase;
 
 /**
