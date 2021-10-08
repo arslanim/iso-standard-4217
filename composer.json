@@ -1,4 +1,11 @@
 {
+    "name": "arslanimamutdinov/iso-standard-4217",
+    "authors": [
+        {
+            "name": "Arslan Imamutdinov",
+            "email": "ara.imamutdinov@gmail.com"
+        }
+    ],
     "require": {},
     "license": "MIT",
     "require-dev": {
