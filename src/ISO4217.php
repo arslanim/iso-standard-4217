@@ -3,6 +3,7 @@
 namespace arslanimamutdinov\ISOStandard4217;
 
 use arslanimamutdinov\ISOStandardUtilities\codes\AttributeCodes;
+use arslanimamutdinov\ISOStandardUtilities\StandardSearchUtility;
 
 /**
  * Class ISO4217
@@ -1092,4 +1093,22 @@ abstract class ISO4217
             AttributeCodes::ATTRIBUTE_NUMERIC_CODE => "932",
         ],
     ];
+
+    public static function __callStatic($name, $arguments)
+    {
+        $currencyData = StandardSearchUtility::getByAlpha3(self::CURRENCIES, $name) ?? null;
+
+        return !empty($currencyData) ? self::createCurrency($currencyData) : null;
+    }
+
+    private static function createCurrency(array $currencyData): Currency
+    {
+        return (
+            new Currency(
+                $currencyData[AttributeCodes::ATTRIBUTE_NAME],
+                $currencyData[AttributeCodes::ATTRIBUTE_ALPHA3],
+                $currencyData[AttributeCodes::ATTRIBUTE_NUMERIC_CODE]
+            )
+        );
+    }
 }
