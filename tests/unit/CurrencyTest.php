@@ -11,4 +11,11 @@ use PHPUnit\Framework\TestCase;
  */
 class CurrencyTest extends TestCase
 {
+    private const NAME_TEST_VALUE = 'foo';
+    private const ALPHA3_TEST_VALUE = 'foobar';
+    private const NUMERIC_CODE_TEST_VALUE = 'foobar';
+
+    public function testSuccessCreate(): void
+    {
+    }
 }
