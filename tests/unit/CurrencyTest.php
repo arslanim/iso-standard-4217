@@ -23,4 +23,39 @@ class CurrencyTest extends TestCase
         $this->assertEquals(self::ALPHA3_TEST_VALUE, $currency->getAlpha3());
         $this->assertEquals(self::NUMERIC_CODE_TEST_VALUE, $currency->getNumericCode());
     }
+
+    public function testValidation(): void
+    {
+
+    }
+
+    public function getValidationTestData(): array
+    {
+        return [
+            [
+                'data' => [
+                    'name' => '',
+                    'alpha3' => '',
+                    'numericCode' => '',
+                ],
+                'expectedException' => CurrencyStandardNameEmptyException::class,
+            ],
+            [
+                'data' => [
+                    'name' => 'foo',
+                    'alpha3' => '',
+                    'numericCode' => '',
+                ],
+                'expectedException' => CurrencyStandardAlpha3EmptyException::class,
+            ],
+            [
+                'data' => [
+                    'name' => 'foo',
+                    'alpha3' => 'bar',
+                    'numericCode' => '',
+                ],
+                'expectedException' => CurrencyStandardNumericCodeEmptyException::class,
+            ],
+        ];
+    }
 }
