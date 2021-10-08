@@ -669,7 +669,7 @@ abstract class ISO4217
         ],
         [
             AttributeCodes::ATTRIBUTE_NAME => "Mauritanian ouguiya",
-            AttributeCodes::ATTRIBUTE_ALPHA3 => "MRU[12]",
+            AttributeCodes::ATTRIBUTE_ALPHA3 => "MRU",
             AttributeCodes::ATTRIBUTE_NUMERIC_CODE => "929",
         ],
         [
@@ -859,7 +859,7 @@ abstract class ISO4217
         ],
         [
             AttributeCodes::ATTRIBUTE_NAME => "SÃ£o TomÃ© and PrÃ­ncipe dobra",
-            AttributeCodes::ATTRIBUTE_ALPHA3 => "STN[14]",
+            AttributeCodes::ATTRIBUTE_ALPHA3 => "STN",
             AttributeCodes::ATTRIBUTE_NUMERIC_CODE => "930",
         ],
         [
