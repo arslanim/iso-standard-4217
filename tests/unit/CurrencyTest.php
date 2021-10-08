@@ -24,9 +24,16 @@ class CurrencyTest extends TestCase
         $this->assertEquals(self::NUMERIC_CODE_TEST_VALUE, $currency->getNumericCode());
     }
 
-    public function testValidation(): void
+    /**
+     * @dataProvider getValidationTestData
+     * @param array $data
+     * @param string $exceptionClassName
+     */
+    public function testValidation(array $data, string $exceptionClassName): void
     {
+        $this->expectException($exceptionClassName);
 
+        (new Currency($data['name'], $data['alpha3'], $data['numericCode']));
     }
 
     public function getValidationTestData(): array
