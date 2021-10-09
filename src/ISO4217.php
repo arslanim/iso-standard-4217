@@ -1101,6 +1101,11 @@ abstract class ISO4217
         return !empty($currencyData) ? self::createCurrency($currencyData) : null;
     }
 
+    public static function getRawStandardsData(): array
+    {
+        return self::CURRENCIES;
+    }
+
     private static function createCurrency(array $currencyData): Currency
     {
         return (
