@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1633705724">
-  <project timestamp="1633705724">
+<coverage generated="1633811716">
+  <project timestamp="1633811716">
     <file name="/app/src/Currency.php">
       <class name="arslanimamutdinov\ISOStandard4217\Currency" namespace="global">
         <metrics complexity="8" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="20" coveredelements="20"/>
@@ -29,21 +29,23 @@
     </file>
     <file name="/app/src/ISO4217.php">
       <class name="arslanimamutdinov\ISOStandard4217\ISO4217" namespace="global">
-        <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="8" coveredelements="8"/>
+        <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
       </class>
       <line num="1097" type="method" name="__callStatic" visibility="public" complexity="2" crap="2" count="540"/>
       <line num="1099" type="stmt" count="540"/>
       <line num="1101" type="stmt" count="540"/>
-      <line num="1104" type="method" name="createCurrency" visibility="private" complexity="1" crap="1" count="540"/>
-      <line num="1107" type="stmt" count="540"/>
-      <line num="1108" type="stmt" count="540"/>
-      <line num="1109" type="stmt" count="540"/>
-      <line num="1110" type="stmt" count="540"/>
-      <metrics loc="1114" ncloc="930" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="6" elements="8" coveredelements="8"/>
+      <line num="1104" type="method" name="getRawStandardsData" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="1106" type="stmt" count="1"/>
+      <line num="1109" type="method" name="createCurrency" visibility="private" complexity="1" crap="1" count="540"/>
+      <line num="1112" type="stmt" count="540"/>
+      <line num="1113" type="stmt" count="540"/>
+      <line num="1114" type="stmt" count="540"/>
+      <line num="1115" type="stmt" count="540"/>
+      <metrics loc="1119" ncloc="935" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="10" coveredelements="10"/>
     </file>
     <file name="/app/src/ISO4217Utility.php">
       <class name="arslanimamutdinov\ISOStandard4217\ISO4217Utility" namespace="global">
-        <metrics complexity="180" methods="180" coveredmethods="180" conditionals="0" coveredconditionals="0" statements="180" coveredstatements="180" elements="360" coveredelements="360"/>
+        <metrics complexity="181" methods="181" coveredmethods="181" conditionals="0" coveredconditionals="0" statements="181" coveredstatements="181" elements="362" coveredelements="362"/>
       </class>
       <line num="11" type="method" name="AED" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="13" type="stmt" count="2"/>
@@ -405,7 +407,9 @@
       <line num="1615" type="stmt" count="2"/>
       <line num="1622" type="method" name="ZWL" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="1624" type="stmt" count="2"/>
-      <metrics loc="1626" ncloc="906" classes="1" methods="180" coveredmethods="180" conditionals="0" coveredconditionals="0" statements="180" coveredstatements="180" elements="360" coveredelements="360"/>
+      <line num="1627" type="method" name="getRawStandardsData" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="1629" type="stmt" count="1"/>
+      <metrics loc="1631" ncloc="911" classes="1" methods="181" coveredmethods="181" conditionals="0" coveredconditionals="0" statements="181" coveredstatements="181" elements="362" coveredelements="362"/>
     </file>
     <file name="/app/src/exceptions/CurrencyStandardAlpha3EmptyException.php">
       <class name="arslanimamutdinov\ISOStandard4217\exceptions\CurrencyStandardAlpha3EmptyException" namespace="global">
@@ -425,6 +429,6 @@
       </class>
       <metrics loc="9" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="6" loc="2820" ncloc="1916" classes="3" methods="187" coveredmethods="187" conditionals="0" coveredconditionals="0" statements="201" coveredstatements="201" elements="388" coveredelements="388"/>
+    <metrics files="6" loc="2830" ncloc="1926" classes="3" methods="189" coveredmethods="189" conditionals="0" coveredconditionals="0" statements="203" coveredstatements="203" elements="392" coveredelements="392"/>
   </project>
 </coverage>
