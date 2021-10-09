@@ -22,6 +22,8 @@ class GetAllFunctionTest extends TestCase
         $utilityStandards = ISO4217::getAll();
         $serviceStandards = (new ISO4217Utility())->getAll();
 
+        $this->assertStandardsCountEqualsRawDataCount($utilityStandards, $rawData);
+        $this->assertStandardsCountEqualsRawDataCount($serviceStandards, $rawData);
         $this->assertStandardsEqualsRawData($utilityStandards, $rawData);
         $this->assertStandardsEqualsRawData($serviceStandards, $rawData);
         $this->assertUtilityStandardsEqualsServiceStandards($utilityStandards, $serviceStandards);
@@ -33,8 +35,6 @@ class GetAllFunctionTest extends TestCase
      */
     private function assertStandardsEqualsRawData(array $standards, array $rawData): void
     {
-        $this->assertEquals(count($standards), count($rawData));
-
         for ($i = 0; $i < count($rawData); $i++) {
             $this->assertStandardEqualsRawData($standards[$i], $rawData[$i]);
         }
@@ -45,6 +45,11 @@ class GetAllFunctionTest extends TestCase
         array $serviceStandards
     ): void {
         $this->assertEquals($utilityStandards, $serviceStandards);
+    }
+
+    private function assertStandardsCountEqualsRawDataCount(array $standards, array $rawData): void
+    {
+        $this->assertEquals(count($standards), count($rawData));
     }
 
     private function assertStandardEqualsRawData(Currency $currency, array $rawData): void
