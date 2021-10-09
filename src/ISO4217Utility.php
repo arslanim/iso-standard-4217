@@ -1628,4 +1628,12 @@ class ISO4217Utility
     {
         return ISO4217::getRawStandardsData();
     }
+
+    /**
+     * @return Currency[]
+     */
+    public function getAll(): array
+    {
+        return ISO4217::getAll();
+    }
 }
