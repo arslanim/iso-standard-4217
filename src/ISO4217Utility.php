@@ -1623,4 +1623,9 @@ class ISO4217Utility
     {
         return ISO4217::ZWL();
     }
+
+    public function getRawStandardsData(): array
+    {
+        return ISO4217::getRawStandardsData();
+    }
 }
