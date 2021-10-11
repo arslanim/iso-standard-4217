@@ -1114,6 +1114,13 @@ abstract class ISO4217
         );
     }
 
+    public static function getByNumericCode(string $numericCode): ?Currency
+    {
+        $standardData = StandardSearchUtility::getByNumericCode(self::CURRENCIES, $numericCode);
+
+        return !empty($standardData) ? self::createCurrency($standardData) : null;
+    }
+
     public static function getRawStandardsData(): array
     {
         return self::CURRENCIES;
