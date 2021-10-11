@@ -1636,4 +1636,9 @@ class ISO4217Utility
     {
         return ISO4217::getAll();
     }
+
+    public function getByNumericCode(string $numericCode): ?Currency
+    {
+        return ISO4217::getByNumericCode($numericCode);
+    }
 }
