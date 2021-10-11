@@ -30,6 +30,12 @@ class GetByNumericCodeFunctionTest extends TestCase
         $this->assertUtilityCurrencyEqualsServiceCurrency($utilityResult, $serviceResult);
     }
 
+    public function testFunctionResultNullOnUnknownNumericCode(): void
+    {
+        $this->assertNull(ISO4217::getByNumericCode('foo'));
+        $this->assertNull((new ISO4217Utility())->getByNumericCode('foo'));
+    }
+
     private function assertExpectedCurrency(Currency $currency): void
     {
         $this->assertEquals(self::CURRENCY_NAME_EXPECTED_VALUE, $currency->getName());
