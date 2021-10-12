@@ -1128,9 +1128,34 @@ abstract class ISO4217
         return !empty($standardData) ? self::createCurrency($standardData) : null;
     }
 
+    /**
+     * @param string[] $numericCodes
+     * @return Currency[]
+     */
+    public static function getAllByNumericCodes(array $numericCodes): array
+    {
+        return self::createCurrencies(
+            StandardSearchUtility::getAllByNumericCodeValues(self::CURRENCIES, $numericCodes)
+        );
+    }
+
     public static function getRawStandardsData(): array
     {
         return self::CURRENCIES;
+    }
+
+    /**
+     * @param array $currenciesData
+     * @return Currency[]
+     */
+    private static function createCurrencies(array $currenciesData): array
+    {
+        return array_map(
+            function (array $currencyData): Currency {
+                return self::createCurrency($currencyData);
+            },
+            $currenciesData
+        );
     }
 
     private static function createCurrency(array $currencyData): Currency
