@@ -1121,6 +1121,13 @@ abstract class ISO4217
         return !empty($standardData) ? self::createCurrency($standardData) : null;
     }
 
+    public static function getByAlpha3(string $alpha3): ?Currency
+    {
+        $standardData = StandardSearchUtility::getByAlpha3(self::CURRENCIES, $alpha3);
+
+        return !empty($standardData) ? self::createCurrency($standardData) : null;
+    }
+
     public static function getRawStandardsData(): array
     {
         return self::CURRENCIES;
