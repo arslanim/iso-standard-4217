@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1633985109">
-  <project timestamp="1633985109">
+<coverage generated="1634068025">
+  <project timestamp="1634068025">
     <file name="/app/src/Currency.php">
       <class name="arslanimamutdinov\ISOStandard4217\Currency" namespace="global">
         <metrics complexity="8" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="20" coveredelements="20"/>
       </class>
-      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="546"/>
-      <line num="17" type="stmt" count="546"/>
-      <line num="19" type="stmt" count="543"/>
-      <line num="20" type="stmt" count="543"/>
-      <line num="21" type="stmt" count="543"/>
-      <line num="22" type="stmt" count="543"/>
-      <line num="24" type="method" name="getName" visibility="public" complexity="1" crap="1" count="363"/>
-      <line num="26" type="stmt" count="363"/>
-      <line num="29" type="method" name="getAlpha3" visibility="public" complexity="1" crap="1" count="363"/>
-      <line num="31" type="stmt" count="363"/>
-      <line num="34" type="method" name="getNumericCode" visibility="public" complexity="1" crap="1" count="363"/>
-      <line num="36" type="stmt" count="363"/>
-      <line num="39" type="method" name="validateAttributes" visibility="private" complexity="4" crap="4" count="546"/>
-      <line num="41" type="stmt" count="546"/>
+      <line num="15" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="547"/>
+      <line num="17" type="stmt" count="547"/>
+      <line num="19" type="stmt" count="544"/>
+      <line num="20" type="stmt" count="544"/>
+      <line num="21" type="stmt" count="544"/>
+      <line num="22" type="stmt" count="544"/>
+      <line num="24" type="method" name="getName" visibility="public" complexity="1" crap="1" count="364"/>
+      <line num="26" type="stmt" count="364"/>
+      <line num="29" type="method" name="getAlpha3" visibility="public" complexity="1" crap="1" count="364"/>
+      <line num="31" type="stmt" count="364"/>
+      <line num="34" type="method" name="getNumericCode" visibility="public" complexity="1" crap="1" count="364"/>
+      <line num="36" type="stmt" count="364"/>
+      <line num="39" type="method" name="validateAttributes" visibility="private" complexity="4" crap="4" count="547"/>
+      <line num="41" type="stmt" count="547"/>
       <line num="42" type="stmt" count="1"/>
-      <line num="45" type="stmt" count="545"/>
+      <line num="45" type="stmt" count="546"/>
       <line num="46" type="stmt" count="1"/>
-      <line num="49" type="stmt" count="544"/>
+      <line num="49" type="stmt" count="545"/>
       <line num="50" type="stmt" count="1"/>
-      <line num="52" type="stmt" count="543"/>
+      <line num="52" type="stmt" count="544"/>
       <metrics loc="53" ncloc="53" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="20" coveredelements="20"/>
     </file>
     <file name="/app/src/ISO4217.php">
       <class name="arslanimamutdinov\ISOStandard4217\ISO4217" namespace="global">
-        <metrics complexity="7" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="19" coveredelements="19"/>
+        <metrics complexity="9" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="22" coveredelements="22"/>
       </class>
       <line num="1097" type="method" name="__callStatic" visibility="public" complexity="2" crap="2" count="540"/>
       <line num="1099" type="stmt" count="540"/>
@@ -43,18 +43,21 @@
       <line num="1117" type="method" name="getByNumericCode" visibility="public" complexity="2" crap="2" count="2"/>
       <line num="1119" type="stmt" count="2"/>
       <line num="1121" type="stmt" count="2"/>
-      <line num="1124" type="method" name="getRawStandardsData" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="1124" type="method" name="getByAlpha3" visibility="public" complexity="2" crap="2" count="2"/>
       <line num="1126" type="stmt" count="2"/>
-      <line num="1129" type="method" name="createCurrency" visibility="private" complexity="1" crap="1" count="542"/>
-      <line num="1132" type="stmt" count="542"/>
-      <line num="1133" type="stmt" count="542"/>
-      <line num="1134" type="stmt" count="542"/>
-      <line num="1135" type="stmt" count="542"/>
-      <metrics loc="1139" ncloc="952" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="19" coveredelements="19"/>
+      <line num="1128" type="stmt" count="2"/>
+      <line num="1131" type="method" name="getRawStandardsData" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="1133" type="stmt" count="2"/>
+      <line num="1136" type="method" name="createCurrency" visibility="private" complexity="1" crap="1" count="543"/>
+      <line num="1139" type="stmt" count="543"/>
+      <line num="1140" type="stmt" count="543"/>
+      <line num="1141" type="stmt" count="543"/>
+      <line num="1142" type="stmt" count="543"/>
+      <metrics loc="1146" ncloc="959" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="16" coveredstatements="16" elements="22" coveredelements="22"/>
     </file>
     <file name="/app/src/ISO4217Utility.php">
       <class name="arslanimamutdinov\ISOStandard4217\ISO4217Utility" namespace="global">
-        <metrics complexity="183" methods="183" coveredmethods="183" conditionals="0" coveredconditionals="0" statements="183" coveredstatements="183" elements="366" coveredelements="366"/>
+        <metrics complexity="184" methods="184" coveredmethods="184" conditionals="0" coveredconditionals="0" statements="184" coveredstatements="184" elements="368" coveredelements="368"/>
       </class>
       <line num="11" type="method" name="AED" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="13" type="stmt" count="2"/>
@@ -422,7 +425,9 @@
       <line num="1637" type="stmt" count="1"/>
       <line num="1640" type="method" name="getByNumericCode" visibility="public" complexity="1" crap="1" count="2"/>
       <line num="1642" type="stmt" count="2"/>
-      <metrics loc="1644" ncloc="921" classes="1" methods="183" coveredmethods="183" conditionals="0" coveredconditionals="0" statements="183" coveredstatements="183" elements="366" coveredelements="366"/>
+      <line num="1645" type="method" name="getByAlpha3" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="1647" type="stmt" count="2"/>
+      <metrics loc="1649" ncloc="926" classes="1" methods="184" coveredmethods="184" conditionals="0" coveredconditionals="0" statements="184" coveredstatements="184" elements="368" coveredelements="368"/>
     </file>
     <file name="/app/src/exceptions/CurrencyStandardAlpha3EmptyException.php">
       <class name="arslanimamutdinov\ISOStandard4217\exceptions\CurrencyStandardAlpha3EmptyException" namespace="global">
@@ -442,6 +447,6 @@
       </class>
       <metrics loc="9" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="6" loc="2863" ncloc="1953" classes="3" methods="193" coveredmethods="193" conditionals="0" coveredconditionals="0" statements="212" coveredstatements="212" elements="405" coveredelements="405"/>
+    <metrics files="6" loc="2875" ncloc="1965" classes="3" methods="195" coveredmethods="195" conditionals="0" coveredconditionals="0" statements="215" coveredstatements="215" elements="410" coveredelements="410"/>
   </project>
 </coverage>
