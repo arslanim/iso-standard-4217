@@ -41,6 +41,17 @@ class GetAllByNumericCodesTest extends TestCase
         $this->assertActualStandardsEqualsExpected($serviceStandards, self::STANDARDS_EXPECTED);
     }
 
+    public function testFunctionReturnsEmptyArray(): void
+    {
+        $utilityStandards = ISO4217::getAllByNumericCodes(['foo', 'bar',]);
+        $serviceStandards = (new ISO4217Utility())->getAllByNumericCodes(['foo', 'bar',]);
+
+        $this->assertEmpty($utilityStandards);
+        $this->assertEmpty($serviceStandards);
+        $this->assertUtilityStandardsCountEqualsServiceStandardsCount($utilityStandards, $serviceStandards);
+        $this->assertUtilityStandardsEqualsServiceStandards($utilityStandards, $serviceStandards);
+    }
+
     private function assertUtilityStandardsEqualsServiceStandards(
         array $utilityStandards,
         array $serviceStandards
