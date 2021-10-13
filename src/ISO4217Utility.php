@@ -1655,4 +1655,13 @@ class ISO4217Utility
     {
         return ISO4217::getAllByNumericCodes($numericCodes);
     }
+
+    /**
+     * @param string[] $alpha3Codes
+     * @return Currency[]
+     */
+    public function getAllByAlpha3Codes(array $alpha3Codes): array
+    {
+        return ISO4217::getAllByAlpha3Codes($alpha3Codes);
+    }
 }
