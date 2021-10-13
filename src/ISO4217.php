@@ -1139,6 +1139,17 @@ abstract class ISO4217
         );
     }
 
+    /**
+     * @param string[] $alpha3Codes
+     * @return Currency[]
+     */
+    public static function getAllByAlpha3Codes(array $alpha3Codes): array
+    {
+        return self::createCurrencies(
+            StandardSearchUtility::getAllByAlpha3Values(self::CURRENCIES, $alpha3Codes)
+        );
+    }
+
     public static function getRawStandardsData(): array
     {
         return self::CURRENCIES;
