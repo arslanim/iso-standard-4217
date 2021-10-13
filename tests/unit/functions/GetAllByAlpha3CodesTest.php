@@ -2,6 +2,9 @@
 
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\functions;
 
+use arslanimamutdinov\ISOStandard4217\Currency;
+use arslanimamutdinov\ISOStandard4217\ISO4217;
+use arslanimamutdinov\ISOStandard4217\ISO4217Utility;
 use arslanimamutdinov\ISOStandardUtilities\codes\AttributeCodes;
 use PHPStan\Testing\TestCase;
 
@@ -10,7 +13,7 @@ use PHPStan\Testing\TestCase;
  */
 class GetAllByAlpha3CodesTest extends TestCase
 {
-    private const EXISTED_NUMERIC_CODE_VALUES = ['RUB', 'EUR'];
+    private const EXISTED_ALPHA3_CODE_VALUES = ['RUB', 'EUR'];
 
     private const STANDARDS_EXPECTED = [
         [
@@ -24,4 +27,60 @@ class GetAllByAlpha3CodesTest extends TestCase
             AttributeCodes::ATTRIBUTE_NAME => "Euro",
         ],
     ];
+
+    public function testFunctionReturnsStandardsArray(): void
+    {
+        $utilityStandards = ISO4217::getAllByAlpha3Codes(self::EXISTED_ALPHA3_CODE_VALUES);
+        $serviceStandards = (new ISO4217Utility())->getAllByAlpha3Codes(self::EXISTED_ALPHA3_CODE_VALUES);
+
+        $this->assertUtilityStandardsCountEqualsServiceStandardsCount($utilityStandards, $serviceStandards);
+        $this->assertUtilityStandardsEqualsServiceStandards($utilityStandards, $serviceStandards);
+        $this->assertActualStandardsEqualsExpected($utilityStandards, self::STANDARDS_EXPECTED);
+        $this->assertActualStandardsEqualsExpected($serviceStandards, self::STANDARDS_EXPECTED);
+    }
+
+    public function testFunctionReturnsEmptyArray(): void
+    {
+        $utilityStandards = ISO4217::getAllByAlpha3Codes(['foo', 'bar',]);
+        $serviceStandards = (new ISO4217Utility())->getAllByAlpha3Codes(['foo', 'bar',]);
+
+        $this->assertEmpty($utilityStandards);
+        $this->assertEmpty($serviceStandards);
+        $this->assertUtilityStandardsCountEqualsServiceStandardsCount($utilityStandards, $serviceStandards);
+        $this->assertUtilityStandardsEqualsServiceStandards($utilityStandards, $serviceStandards);
+    }
+
+    private function assertUtilityStandardsEqualsServiceStandards(
+        array $utilityStandards,
+        array $serviceStandards
+    ): void {
+        $this->assertEquals($utilityStandards, $serviceStandards);
+    }
+
+    private function assertUtilityStandardsCountEqualsServiceStandardsCount(
+        array $utilityStandards,
+        array $serviceStandards
+    ): void {
+        $this->assertEquals(count($utilityStandards), count($serviceStandards));
+    }
+
+    /**
+     * @param Currency[] $actualStandards
+     * @param array $expectedStandards
+     */
+    private function assertActualStandardsEqualsExpected(array $actualStandards, array $expectedStandards): void
+    {
+        foreach ($actualStandards as $actualStandard) {
+            $expectedStandard = array_filter(
+                $expectedStandards,
+                function (array $rawStandardData) use ($actualStandard): bool {
+                    return $rawStandardData[AttributeCodes::ATTRIBUTE_NUMERIC_CODE] === $actualStandard->getNumericCode() &&
+                        $rawStandardData[AttributeCodes::ATTRIBUTE_ALPHA3] === $actualStandard->getAlpha3() &&
+                        $rawStandardData[AttributeCodes::ATTRIBUTE_NAME] === $actualStandard->getName();
+                }
+            );
+
+            $this->assertNotEmpty($expectedStandard);
+        }
+    }
 }
