@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1634160546">
-  <project timestamp="1634160546">
+<coverage generated="1636838233">
+  <project timestamp="1636838233">
     <file name="/app/src/Currency.php">
       <class name="arslanimamutdinov\ISOStandard4217\Currency" namespace="global">
         <metrics complexity="8" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="20" coveredelements="20"/>
