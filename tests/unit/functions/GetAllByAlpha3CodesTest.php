@@ -6,7 +6,7 @@ use arslanimamutdinov\ISOStandard4217\Currency;
 use arslanimamutdinov\ISOStandard4217\ISO4217;
 use arslanimamutdinov\ISOStandard4217\ISO4217Utility;
 use arslanimamutdinov\ISOStandardUtilities\codes\AttributeCodes;
-use PHPStan\Testing\TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @group standard-4217-functions
