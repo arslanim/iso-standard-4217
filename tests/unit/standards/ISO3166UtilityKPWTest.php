@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityKPWTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'North Korean won';
     private const EXPECTED_CURRENCY_ALPHA3 = 'KPW';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '408';
-    
+
     public function testKPW(): void
     {
         $currency = ISO4217::KPW();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityKPW(): void
     {
         $currency = (new ISO4217Utility())->KPW();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::KPW(), (new ISO4217Utility())->KPW());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

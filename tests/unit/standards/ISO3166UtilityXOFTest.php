@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityXOFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'CFA franc BCEAO';
     private const EXPECTED_CURRENCY_ALPHA3 = 'XOF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '952';
-    
+
     public function testXOF(): void
     {
         $currency = ISO4217::XOF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityXOF(): void
     {
         $currency = (new ISO4217Utility())->XOF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::XOF(), (new ISO4217Utility())->XOF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

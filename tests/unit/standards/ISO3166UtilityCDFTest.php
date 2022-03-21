@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCDFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Congolese franc';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CDF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '976';
-    
+
     public function testCDF(): void
     {
         $currency = ISO4217::CDF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCDF(): void
     {
         $currency = (new ISO4217Utility())->CDF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CDF(), (new ISO4217Utility())->CDF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityAWGTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Aruban florin';
     private const EXPECTED_CURRENCY_ALPHA3 = 'AWG';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '533';
-    
+
     public function testAWG(): void
     {
         $currency = ISO4217::AWG();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityAWG(): void
     {
         $currency = (new ISO4217Utility())->AWG();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::AWG(), (new ISO4217Utility())->AWG());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

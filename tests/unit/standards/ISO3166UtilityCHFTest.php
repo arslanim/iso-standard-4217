@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCHFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Swiss franc';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CHF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '756';
-    
+
     public function testCHF(): void
     {
         $currency = ISO4217::CHF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCHF(): void
     {
         $currency = (new ISO4217Utility())->CHF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CHF(), (new ISO4217Utility())->CHF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

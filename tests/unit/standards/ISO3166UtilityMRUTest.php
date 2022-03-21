@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityMRUTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Mauritanian ouguiya';
     private const EXPECTED_CURRENCY_ALPHA3 = 'MRU';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '929';
-    
+
     public function testMRU(): void
     {
         $currency = ISO4217::MRU();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityMRU(): void
     {
         $currency = (new ISO4217Utility())->MRU();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::MRU(), (new ISO4217Utility())->MRU());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityTOPTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Tongan paÊ»anga';
     private const EXPECTED_CURRENCY_ALPHA3 = 'TOP';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '776';
-    
+
     public function testTOP(): void
     {
         $currency = ISO4217::TOP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityTOP(): void
     {
         $currency = (new ISO4217Utility())->TOP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::TOP(), (new ISO4217Utility())->TOP());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

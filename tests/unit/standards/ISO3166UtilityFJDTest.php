@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityFJDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Fiji dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'FJD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '242';
-    
+
     public function testFJD(): void
     {
         $currency = ISO4217::FJD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityFJD(): void
     {
         $currency = (new ISO4217Utility())->FJD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::FJD(), (new ISO4217Utility())->FJD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

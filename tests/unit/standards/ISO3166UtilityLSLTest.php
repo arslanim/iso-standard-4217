@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityLSLTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Lesotho loti';
     private const EXPECTED_CURRENCY_ALPHA3 = 'LSL';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '426';
-    
+
     public function testLSL(): void
     {
         $currency = ISO4217::LSL();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityLSL(): void
     {
         $currency = (new ISO4217Utility())->LSL();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::LSL(), (new ISO4217Utility())->LSL());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

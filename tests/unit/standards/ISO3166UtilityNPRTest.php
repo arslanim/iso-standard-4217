@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityNPRTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Nepalese rupee';
     private const EXPECTED_CURRENCY_ALPHA3 = 'NPR';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '524';
-    
+
     public function testNPR(): void
     {
         $currency = ISO4217::NPR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityNPR(): void
     {
         $currency = (new ISO4217Utility())->NPR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::NPR(), (new ISO4217Utility())->NPR());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityBWPTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Botswana pula';
     private const EXPECTED_CURRENCY_ALPHA3 = 'BWP';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '072';
-    
+
     public function testBWP(): void
     {
         $currency = ISO4217::BWP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityBWP(): void
     {
         $currency = (new ISO4217Utility())->BWP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::BWP(), (new ISO4217Utility())->BWP());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

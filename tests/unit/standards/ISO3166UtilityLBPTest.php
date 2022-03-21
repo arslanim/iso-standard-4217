@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityLBPTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Lebanese pound';
     private const EXPECTED_CURRENCY_ALPHA3 = 'LBP';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '422';
-    
+
     public function testLBP(): void
     {
         $currency = ISO4217::LBP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityLBP(): void
     {
         $currency = (new ISO4217Utility())->LBP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::LBP(), (new ISO4217Utility())->LBP());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

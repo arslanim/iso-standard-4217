@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityKGSTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Kyrgyzstani som';
     private const EXPECTED_CURRENCY_ALPHA3 = 'KGS';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '417';
-    
+
     public function testKGS(): void
     {
         $currency = ISO4217::KGS();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityKGS(): void
     {
         $currency = (new ISO4217Utility())->KGS();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::KGS(), (new ISO4217Utility())->KGS());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

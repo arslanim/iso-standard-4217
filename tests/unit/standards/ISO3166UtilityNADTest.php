@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityNADTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Namibian dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'NAD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '516';
-    
+
     public function testNAD(): void
     {
         $currency = ISO4217::NAD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityNAD(): void
     {
         $currency = (new ISO4217Utility())->NAD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::NAD(), (new ISO4217Utility())->NAD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

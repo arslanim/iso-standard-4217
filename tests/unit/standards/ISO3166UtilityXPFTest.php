@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityXPFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'CFP franc (franc Pacifique)';
     private const EXPECTED_CURRENCY_ALPHA3 = 'XPF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '953';
-    
+
     public function testXPF(): void
     {
         $currency = ISO4217::XPF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityXPF(): void
     {
         $currency = (new ISO4217Utility())->XPF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::XPF(), (new ISO4217Utility())->XPF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

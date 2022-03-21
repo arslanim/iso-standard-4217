@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityWSTTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Samoan tala';
     private const EXPECTED_CURRENCY_ALPHA3 = 'WST';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '882';
-    
+
     public function testWST(): void
     {
         $currency = ISO4217::WST();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityWST(): void
     {
         $currency = (new ISO4217Utility())->WST();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::WST(), (new ISO4217Utility())->WST());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

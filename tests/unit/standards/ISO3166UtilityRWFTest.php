@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityRWFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Rwandan franc';
     private const EXPECTED_CURRENCY_ALPHA3 = 'RWF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '646';
-    
+
     public function testRWF(): void
     {
         $currency = ISO4217::RWF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityRWF(): void
     {
         $currency = (new ISO4217Utility())->RWF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::RWF(), (new ISO4217Utility())->RWF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

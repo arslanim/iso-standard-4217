@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityDZDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Algerian dinar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'DZD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '012';
-    
+
     public function testDZD(): void
     {
         $currency = ISO4217::DZD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityDZD(): void
     {
         $currency = (new ISO4217Utility())->DZD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::DZD(), (new ISO4217Utility())->DZD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

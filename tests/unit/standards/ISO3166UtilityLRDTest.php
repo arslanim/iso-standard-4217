@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityLRDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Liberian dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'LRD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '430';
-    
+
     public function testLRD(): void
     {
         $currency = ISO4217::LRD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityLRD(): void
     {
         $currency = (new ISO4217Utility())->LRD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::LRD(), (new ISO4217Utility())->LRD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

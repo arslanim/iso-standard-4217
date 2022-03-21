@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityKESTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Kenyan shilling';
     private const EXPECTED_CURRENCY_ALPHA3 = 'KES';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '404';
-    
+
     public function testKES(): void
     {
         $currency = ISO4217::KES();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityKES(): void
     {
         $currency = (new ISO4217Utility())->KES();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::KES(), (new ISO4217Utility())->KES());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

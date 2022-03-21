@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityAMDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Armenian dram';
     private const EXPECTED_CURRENCY_ALPHA3 = 'AMD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '051';
-    
+
     public function testAMD(): void
     {
         $currency = ISO4217::AMD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityAMD(): void
     {
         $currency = (new ISO4217Utility())->AMD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::AMD(), (new ISO4217Utility())->AMD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

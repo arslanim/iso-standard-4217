@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityJODTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Jordanian dinar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'JOD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '400';
-    
+
     public function testJOD(): void
     {
         $currency = ISO4217::JOD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityJOD(): void
     {
         $currency = (new ISO4217Utility())->JOD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::JOD(), (new ISO4217Utility())->JOD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

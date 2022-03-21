@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityALLTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Albanian lek';
     private const EXPECTED_CURRENCY_ALPHA3 = 'ALL';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '008';
-    
+
     public function testALL(): void
     {
         $currency = ISO4217::ALL();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityALL(): void
     {
         $currency = (new ISO4217Utility())->ALL();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::ALL(), (new ISO4217Utility())->ALL());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

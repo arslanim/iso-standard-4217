@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCADTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Canadian dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CAD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '124';
-    
+
     public function testCAD(): void
     {
         $currency = ISO4217::CAD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCAD(): void
     {
         $currency = (new ISO4217Utility())->CAD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CAD(), (new ISO4217Utility())->CAD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

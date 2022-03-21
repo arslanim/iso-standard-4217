@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityGELTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Georgian lari';
     private const EXPECTED_CURRENCY_ALPHA3 = 'GEL';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '981';
-    
+
     public function testGEL(): void
     {
         $currency = ISO4217::GEL();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityGEL(): void
     {
         $currency = (new ISO4217Utility())->GEL();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::GEL(), (new ISO4217Utility())->GEL());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

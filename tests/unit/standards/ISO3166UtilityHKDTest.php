@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityHKDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Hong Kong dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'HKD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '344';
-    
+
     public function testHKD(): void
     {
         $currency = ISO4217::HKD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityHKD(): void
     {
         $currency = (new ISO4217Utility())->HKD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::HKD(), (new ISO4217Utility())->HKD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

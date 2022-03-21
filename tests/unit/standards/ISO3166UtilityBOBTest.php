@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityBOBTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Boliviano';
     private const EXPECTED_CURRENCY_ALPHA3 = 'BOB';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '068';
-    
+
     public function testBOB(): void
     {
         $currency = ISO4217::BOB();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityBOB(): void
     {
         $currency = (new ISO4217Utility())->BOB();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::BOB(), (new ISO4217Utility())->BOB());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

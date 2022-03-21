@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityZARTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'South African rand';
     private const EXPECTED_CURRENCY_ALPHA3 = 'ZAR';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '710';
-    
+
     public function testZAR(): void
     {
         $currency = ISO4217::ZAR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityZAR(): void
     {
         $currency = (new ISO4217Utility())->ZAR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::ZAR(), (new ISO4217Utility())->ZAR());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

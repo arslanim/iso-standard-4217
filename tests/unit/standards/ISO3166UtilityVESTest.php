@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityVESTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Venezuelan bolÃ­var soberano[13]';
     private const EXPECTED_CURRENCY_ALPHA3 = 'VES';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '928';
-    
+
     public function testVES(): void
     {
         $currency = ISO4217::VES();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityVES(): void
     {
         $currency = (new ISO4217Utility())->VES();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::VES(), (new ISO4217Utility())->VES());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

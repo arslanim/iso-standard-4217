@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityTHBTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Thai baht';
     private const EXPECTED_CURRENCY_ALPHA3 = 'THB';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '764';
-    
+
     public function testTHB(): void
     {
         $currency = ISO4217::THB();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityTHB(): void
     {
         $currency = (new ISO4217Utility())->THB();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::THB(), (new ISO4217Utility())->THB());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

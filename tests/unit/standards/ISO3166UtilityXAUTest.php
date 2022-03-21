@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityXAUTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Gold (one troy ounce)';
     private const EXPECTED_CURRENCY_ALPHA3 = 'XAU';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '959';
-    
+
     public function testXAU(): void
     {
         $currency = ISO4217::XAU();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityXAU(): void
     {
         $currency = (new ISO4217Utility())->XAU();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::XAU(), (new ISO4217Utility())->XAU());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

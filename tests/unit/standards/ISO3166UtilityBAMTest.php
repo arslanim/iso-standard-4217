@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityBAMTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Bosnia and Herzegovina convertible mark';
     private const EXPECTED_CURRENCY_ALPHA3 = 'BAM';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '977';
-    
+
     public function testBAM(): void
     {
         $currency = ISO4217::BAM();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityBAM(): void
     {
         $currency = (new ISO4217Utility())->BAM();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::BAM(), (new ISO4217Utility())->BAM());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

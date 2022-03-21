@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilitySOSTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Somali shilling';
     private const EXPECTED_CURRENCY_ALPHA3 = 'SOS';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '706';
-    
+
     public function testSOS(): void
     {
         $currency = ISO4217::SOS();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilitySOS(): void
     {
         $currency = (new ISO4217Utility())->SOS();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::SOS(), (new ISO4217Utility())->SOS());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

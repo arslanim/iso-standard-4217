@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityKHRTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Cambodian riel';
     private const EXPECTED_CURRENCY_ALPHA3 = 'KHR';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '116';
-    
+
     public function testKHR(): void
     {
         $currency = ISO4217::KHR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityKHR(): void
     {
         $currency = (new ISO4217Utility())->KHR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::KHR(), (new ISO4217Utility())->KHR());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

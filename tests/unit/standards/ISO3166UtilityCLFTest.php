@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCLFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Unidad de Fomento (funds code)';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CLF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '990';
-    
+
     public function testCLF(): void
     {
         $currency = ISO4217::CLF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCLF(): void
     {
         $currency = (new ISO4217Utility())->CLF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CLF(), (new ISO4217Utility())->CLF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

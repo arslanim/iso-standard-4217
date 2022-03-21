@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityXBBTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'European Monetary Unit (E.M.U.-6) (bond market unit)';
     private const EXPECTED_CURRENCY_ALPHA3 = 'XBB';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '956';
-    
+
     public function testXBB(): void
     {
         $currency = ISO4217::XBB();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityXBB(): void
     {
         $currency = (new ISO4217Utility())->XBB();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::XBB(), (new ISO4217Utility())->XBB());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

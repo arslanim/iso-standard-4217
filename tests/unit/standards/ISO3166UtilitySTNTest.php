@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilitySTNTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'SÃ£o TomÃ© and PrÃ­ncipe dobra';
     private const EXPECTED_CURRENCY_ALPHA3 = 'STN';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '930';
-    
+
     public function testSTN(): void
     {
         $currency = ISO4217::STN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilitySTN(): void
     {
         $currency = (new ISO4217Utility())->STN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::STN(), (new ISO4217Utility())->STN());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

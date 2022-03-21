@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityHTGTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Haitian gourde';
     private const EXPECTED_CURRENCY_ALPHA3 = 'HTG';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '332';
-    
+
     public function testHTG(): void
     {
         $currency = ISO4217::HTG();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityHTG(): void
     {
         $currency = (new ISO4217Utility())->HTG();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::HTG(), (new ISO4217Utility())->HTG());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

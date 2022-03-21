@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityMZNTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Mozambican metical';
     private const EXPECTED_CURRENCY_ALPHA3 = 'MZN';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '943';
-    
+
     public function testMZN(): void
     {
         $currency = ISO4217::MZN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityMZN(): void
     {
         $currency = (new ISO4217Utility())->MZN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::MZN(), (new ISO4217Utility())->MZN());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

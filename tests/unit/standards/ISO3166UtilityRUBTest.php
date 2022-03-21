@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityRUBTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Russian ruble';
     private const EXPECTED_CURRENCY_ALPHA3 = 'RUB';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '643';
-    
+
     public function testRUB(): void
     {
         $currency = ISO4217::RUB();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityRUB(): void
     {
         $currency = (new ISO4217Utility())->RUB();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::RUB(), (new ISO4217Utility())->RUB());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

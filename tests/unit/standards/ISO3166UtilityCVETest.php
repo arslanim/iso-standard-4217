@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCVETest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Cape Verdean escudo';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CVE';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '132';
-    
+
     public function testCVE(): void
     {
         $currency = ISO4217::CVE();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCVE(): void
     {
         $currency = (new ISO4217Utility())->CVE();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CVE(), (new ISO4217Utility())->CVE());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

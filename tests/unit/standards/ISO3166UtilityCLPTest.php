@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCLPTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Chilean peso';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CLP';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '152';
-    
+
     public function testCLP(): void
     {
         $currency = ISO4217::CLP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCLP(): void
     {
         $currency = (new ISO4217Utility())->CLP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CLP(), (new ISO4217Utility())->CLP());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

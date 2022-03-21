@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityGHSTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Ghanaian cedi';
     private const EXPECTED_CURRENCY_ALPHA3 = 'GHS';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '936';
-    
+
     public function testGHS(): void
     {
         $currency = ISO4217::GHS();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityGHS(): void
     {
         $currency = (new ISO4217Utility())->GHS();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::GHS(), (new ISO4217Utility())->GHS());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

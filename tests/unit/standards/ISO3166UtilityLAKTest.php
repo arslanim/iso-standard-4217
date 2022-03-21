@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityLAKTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Lao kip';
     private const EXPECTED_CURRENCY_ALPHA3 = 'LAK';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '418';
-    
+
     public function testLAK(): void
     {
         $currency = ISO4217::LAK();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityLAK(): void
     {
         $currency = (new ISO4217Utility())->LAK();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::LAK(), (new ISO4217Utility())->LAK());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

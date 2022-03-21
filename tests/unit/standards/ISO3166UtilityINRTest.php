@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityINRTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Indian rupee';
     private const EXPECTED_CURRENCY_ALPHA3 = 'INR';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '356';
-    
+
     public function testINR(): void
     {
         $currency = ISO4217::INR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityINR(): void
     {
         $currency = (new ISO4217Utility())->INR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::INR(), (new ISO4217Utility())->INR());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

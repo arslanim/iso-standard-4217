@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityNIOTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Nicaraguan cÃ³rdoba';
     private const EXPECTED_CURRENCY_ALPHA3 = 'NIO';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '558';
-    
+
     public function testNIO(): void
     {
         $currency = ISO4217::NIO();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityNIO(): void
     {
         $currency = (new ISO4217Utility())->NIO();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::NIO(), (new ISO4217Utility())->NIO());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityQARTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Qatari riyal';
     private const EXPECTED_CURRENCY_ALPHA3 = 'QAR';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '634';
-    
+
     public function testQAR(): void
     {
         $currency = ISO4217::QAR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityQAR(): void
     {
         $currency = (new ISO4217Utility())->QAR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::QAR(), (new ISO4217Utility())->QAR());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

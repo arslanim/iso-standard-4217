@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilitySGDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Singapore dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'SGD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '702';
-    
+
     public function testSGD(): void
     {
         $currency = ISO4217::SGD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilitySGD(): void
     {
         $currency = (new ISO4217Utility())->SGD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::SGD(), (new ISO4217Utility())->SGD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

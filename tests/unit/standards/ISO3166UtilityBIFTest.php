@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityBIFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Burundian franc';
     private const EXPECTED_CURRENCY_ALPHA3 = 'BIF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '108';
-    
+
     public function testBIF(): void
     {
         $currency = ISO4217::BIF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityBIF(): void
     {
         $currency = (new ISO4217Utility())->BIF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::BIF(), (new ISO4217Utility())->BIF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

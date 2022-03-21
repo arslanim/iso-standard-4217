@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityPHPTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Philippine peso[13]';
     private const EXPECTED_CURRENCY_ALPHA3 = 'PHP';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '608';
-    
+
     public function testPHP(): void
     {
         $currency = ISO4217::PHP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityPHP(): void
     {
         $currency = (new ISO4217Utility())->PHP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::PHP(), (new ISO4217Utility())->PHP());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

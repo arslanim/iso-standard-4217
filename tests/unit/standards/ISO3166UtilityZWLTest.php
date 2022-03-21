@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityZWLTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Zimbabwean dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'ZWL';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '932';
-    
+
     public function testZWL(): void
     {
         $currency = ISO4217::ZWL();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityZWL(): void
     {
         $currency = (new ISO4217Utility())->ZWL();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::ZWL(), (new ISO4217Utility())->ZWL());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityDKKTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Danish krone';
     private const EXPECTED_CURRENCY_ALPHA3 = 'DKK';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '208';
-    
+
     public function testDKK(): void
     {
         $currency = ISO4217::DKK();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityDKK(): void
     {
         $currency = (new ISO4217Utility())->DKK();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::DKK(), (new ISO4217Utility())->DKK());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

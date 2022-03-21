@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityPLNTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Polish zÅoty';
     private const EXPECTED_CURRENCY_ALPHA3 = 'PLN';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '985';
-    
+
     public function testPLN(): void
     {
         $currency = ISO4217::PLN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityPLN(): void
     {
         $currency = (new ISO4217Utility())->PLN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::PLN(), (new ISO4217Utility())->PLN());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

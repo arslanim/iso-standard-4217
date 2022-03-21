@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityARSTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Argentine peso';
     private const EXPECTED_CURRENCY_ALPHA3 = 'ARS';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '032';
-    
+
     public function testARS(): void
     {
         $currency = ISO4217::ARS();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityARS(): void
     {
         $currency = (new ISO4217Utility())->ARS();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::ARS(), (new ISO4217Utility())->ARS());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

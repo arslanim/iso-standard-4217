@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityGNFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Guinean franc';
     private const EXPECTED_CURRENCY_ALPHA3 = 'GNF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '324';
-    
+
     public function testGNF(): void
     {
         $currency = ISO4217::GNF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityGNF(): void
     {
         $currency = (new ISO4217Utility())->GNF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::GNF(), (new ISO4217Utility())->GNF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

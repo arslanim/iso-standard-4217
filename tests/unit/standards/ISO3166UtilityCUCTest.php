@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCUCTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Cuban convertible peso';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CUC';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '931';
-    
+
     public function testCUC(): void
     {
         $currency = ISO4217::CUC();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCUC(): void
     {
         $currency = (new ISO4217Utility())->CUC();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CUC(), (new ISO4217Utility())->CUC());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

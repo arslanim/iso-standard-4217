@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityMKDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Macedonian denar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'MKD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '807';
-    
+
     public function testMKD(): void
     {
         $currency = ISO4217::MKD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityMKD(): void
     {
         $currency = (new ISO4217Utility())->MKD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::MKD(), (new ISO4217Utility())->MKD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

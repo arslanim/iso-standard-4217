@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityXCDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'East Caribbean dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'XCD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '951';
-    
+
     public function testXCD(): void
     {
         $currency = ISO4217::XCD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityXCD(): void
     {
         $currency = (new ISO4217Utility())->XCD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::XCD(), (new ISO4217Utility())->XCD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

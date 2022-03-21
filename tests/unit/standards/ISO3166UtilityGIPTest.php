@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityGIPTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Gibraltar pound';
     private const EXPECTED_CURRENCY_ALPHA3 = 'GIP';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '292';
-    
+
     public function testGIP(): void
     {
         $currency = ISO4217::GIP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityGIP(): void
     {
         $currency = (new ISO4217Utility())->GIP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::GIP(), (new ISO4217Utility())->GIP());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

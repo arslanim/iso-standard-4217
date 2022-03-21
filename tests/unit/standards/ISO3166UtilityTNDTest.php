@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityTNDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Tunisian dinar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'TND';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '788';
-    
+
     public function testTND(): void
     {
         $currency = ISO4217::TND();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityTND(): void
     {
         $currency = (new ISO4217Utility())->TND();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::TND(), (new ISO4217Utility())->TND());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

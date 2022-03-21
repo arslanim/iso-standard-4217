@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityBYNTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Belarusian ruble';
     private const EXPECTED_CURRENCY_ALPHA3 = 'BYN';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '933';
-    
+
     public function testBYN(): void
     {
         $currency = ISO4217::BYN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityBYN(): void
     {
         $currency = (new ISO4217Utility())->BYN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::BYN(), (new ISO4217Utility())->BYN());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

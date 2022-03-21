@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCHWTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'WIR franc (complementary currency)';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CHW';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '948';
-    
+
     public function testCHW(): void
     {
         $currency = ISO4217::CHW();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCHW(): void
     {
         $currency = (new ISO4217Utility())->CHW();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CHW(), (new ISO4217Utility())->CHW());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

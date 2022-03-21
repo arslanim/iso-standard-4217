@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityGBPTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Pound sterling';
     private const EXPECTED_CURRENCY_ALPHA3 = 'GBP';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '826';
-    
+
     public function testGBP(): void
     {
         $currency = ISO4217::GBP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityGBP(): void
     {
         $currency = (new ISO4217Utility())->GBP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::GBP(), (new ISO4217Utility())->GBP());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

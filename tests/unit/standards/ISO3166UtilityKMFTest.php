@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityKMFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Comoro franc';
     private const EXPECTED_CURRENCY_ALPHA3 = 'KMF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '174';
-    
+
     public function testKMF(): void
     {
         $currency = ISO4217::KMF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityKMF(): void
     {
         $currency = (new ISO4217Utility())->KMF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::KMF(), (new ISO4217Utility())->KMF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

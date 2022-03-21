@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityXPDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Palladium (one troy ounce)';
     private const EXPECTED_CURRENCY_ALPHA3 = 'XPD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '964';
-    
+
     public function testXPD(): void
     {
         $currency = ISO4217::XPD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityXPD(): void
     {
         $currency = (new ISO4217Utility())->XPD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::XPD(), (new ISO4217Utility())->XPD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

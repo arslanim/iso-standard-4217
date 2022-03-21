@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityDJFTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Djiboutian franc';
     private const EXPECTED_CURRENCY_ALPHA3 = 'DJF';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '262';
-    
+
     public function testDJF(): void
     {
         $currency = ISO4217::DJF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityDJF(): void
     {
         $currency = (new ISO4217Utility())->DJF();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::DJF(), (new ISO4217Utility())->DJF());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

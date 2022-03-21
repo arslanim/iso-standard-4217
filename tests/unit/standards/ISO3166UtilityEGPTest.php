@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityEGPTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Egyptian pound';
     private const EXPECTED_CURRENCY_ALPHA3 = 'EGP';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '818';
-    
+
     public function testEGP(): void
     {
         $currency = ISO4217::EGP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityEGP(): void
     {
         $currency = (new ISO4217Utility())->EGP();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::EGP(), (new ISO4217Utility())->EGP());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

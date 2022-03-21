@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityJMDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Jamaican dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'JMD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '388';
-    
+
     public function testJMD(): void
     {
         $currency = ISO4217::JMD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityJMD(): void
     {
         $currency = (new ISO4217Utility())->JMD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::JMD(), (new ISO4217Utility())->JMD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

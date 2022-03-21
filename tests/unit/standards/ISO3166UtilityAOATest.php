@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityAOATest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Angolan kwanza';
     private const EXPECTED_CURRENCY_ALPHA3 = 'AOA';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '973';
-    
+
     public function testAOA(): void
     {
         $currency = ISO4217::AOA();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityAOA(): void
     {
         $currency = (new ISO4217Utility())->AOA();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::AOA(), (new ISO4217Utility())->AOA());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

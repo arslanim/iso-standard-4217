@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilitySCRTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Seychelles rupee';
     private const EXPECTED_CURRENCY_ALPHA3 = 'SCR';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '690';
-    
+
     public function testSCR(): void
     {
         $currency = ISO4217::SCR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilitySCR(): void
     {
         $currency = (new ISO4217Utility())->SCR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::SCR(), (new ISO4217Utility())->SCR());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

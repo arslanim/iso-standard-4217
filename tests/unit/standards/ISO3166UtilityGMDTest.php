@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityGMDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Gambian dalasi';
     private const EXPECTED_CURRENCY_ALPHA3 = 'GMD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '270';
-    
+
     public function testGMD(): void
     {
         $currency = ISO4217::GMD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityGMD(): void
     {
         $currency = (new ISO4217Utility())->GMD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::GMD(), (new ISO4217Utility())->GMD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityPGKTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Papua New Guinean kina';
     private const EXPECTED_CURRENCY_ALPHA3 = 'PGK';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '598';
-    
+
     public function testPGK(): void
     {
         $currency = ISO4217::PGK();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityPGK(): void
     {
         $currency = (new ISO4217Utility())->PGK();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::PGK(), (new ISO4217Utility())->PGK());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

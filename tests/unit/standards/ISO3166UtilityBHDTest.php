@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityBHDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Bahraini dinar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'BHD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '048';
-    
+
     public function testBHD(): void
     {
         $currency = ISO4217::BHD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityBHD(): void
     {
         $currency = (new ISO4217Utility())->BHD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::BHD(), (new ISO4217Utility())->BHD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

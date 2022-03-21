@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityBTNTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Bhutanese ngultrum';
     private const EXPECTED_CURRENCY_ALPHA3 = 'BTN';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '064';
-    
+
     public function testBTN(): void
     {
         $currency = ISO4217::BTN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityBTN(): void
     {
         $currency = (new ISO4217Utility())->BTN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::BTN(), (new ISO4217Utility())->BTN());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

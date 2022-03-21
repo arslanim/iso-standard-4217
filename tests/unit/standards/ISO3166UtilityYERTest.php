@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityYERTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Yemeni rial';
     private const EXPECTED_CURRENCY_ALPHA3 = 'YER';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '886';
-    
+
     public function testYER(): void
     {
         $currency = ISO4217::YER();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityYER(): void
     {
         $currency = (new ISO4217Utility())->YER();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::YER(), (new ISO4217Utility())->YER());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

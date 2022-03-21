@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityCZKTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Czech koruna';
     private const EXPECTED_CURRENCY_ALPHA3 = 'CZK';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '203';
-    
+
     public function testCZK(): void
     {
         $currency = ISO4217::CZK();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityCZK(): void
     {
         $currency = (new ISO4217Utility())->CZK();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::CZK(), (new ISO4217Utility())->CZK());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

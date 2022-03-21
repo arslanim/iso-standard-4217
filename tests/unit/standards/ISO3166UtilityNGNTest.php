@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityNGNTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Nigerian naira';
     private const EXPECTED_CURRENCY_ALPHA3 = 'NGN';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '566';
-    
+
     public function testNGN(): void
     {
         $currency = ISO4217::NGN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityNGN(): void
     {
         $currency = (new ISO4217Utility())->NGN();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::NGN(), (new ISO4217Utility())->NGN());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

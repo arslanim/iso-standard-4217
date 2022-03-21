@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityPKRTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Pakistani rupee';
     private const EXPECTED_CURRENCY_ALPHA3 = 'PKR';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '586';
-    
+
     public function testPKR(): void
     {
         $currency = ISO4217::PKR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityPKR(): void
     {
         $currency = (new ISO4217Utility())->PKR();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::PKR(), (new ISO4217Utility())->PKR());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

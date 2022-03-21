@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityBMDTest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Bermudian dollar';
     private const EXPECTED_CURRENCY_ALPHA3 = 'BMD';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '060';
-    
+
     public function testBMD(): void
     {
         $currency = ISO4217::BMD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityBMD(): void
     {
         $currency = (new ISO4217Utility())->BMD();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::BMD(), (new ISO4217Utility())->BMD());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());

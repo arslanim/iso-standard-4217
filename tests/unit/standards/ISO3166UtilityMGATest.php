@@ -1,5 +1,5 @@
 <?php
-                
+
 namespace arslanimamutdinov\ISOStandard4217\tests\unit\standards;
 
 use arslanimamutdinov\ISOStandard4217\Currency;
@@ -17,26 +17,26 @@ class ISO3166UtilityMGATest extends TestCase
     private const EXPECTED_CURRENCY_NAME = 'Malagasy ariary';
     private const EXPECTED_CURRENCY_ALPHA3 = 'MGA';
     private const EXPECTED_CURRENCY_NUMERIC_CODE = '969';
-    
+
     public function testMGA(): void
     {
         $currency = ISO4217::MGA();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testUtilityMGA(): void
     {
         $currency = (new ISO4217Utility())->MGA();
-        
+
         $this->assertStandardCorrect($currency);
     }
-    
+
     public function testStandardsEqual(): void
     {
         $this->assertEquals(ISO4217::MGA(), (new ISO4217Utility())->MGA());
     }
-    
+
     private function assertStandardCorrect(Currency $currency): void
     {
         $this->assertEquals(self::EXPECTED_CURRENCY_NAME, $currency->getName());
